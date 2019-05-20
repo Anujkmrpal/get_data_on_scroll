@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ashfbashfbds</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="/lib/ngInfiniteScroll-1.0.0/build/ng-infinite-scroll.min.js"></script>
+    <script src="/javascripts/myApp.js"> </script>
+    <script src="/javascripts/model.js"> </script>
+    <script src="/javascripts/controller.js"> </script>
+  </head>
+   
+  <body ng-app="myApp">
+      <div ng-controller="myCntr" infinite-scroll='getData()' infinite-scroll-distance='4'>
+    <!-- <button ng-click="loadMore()">jhjhjh</button> -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr ng-repeat="head in heading track by $index">
+              <th scope="col" ng-repeat="h in head track by $index">{{h}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="row in showRow track by $index">
+            <td ng-repeat="data in row track by $index">{{data}}</td>
+          </tr>
+        </tbody>
+        </table>
+
+
+      </div>
+
+    
+  </body>
+</html>
